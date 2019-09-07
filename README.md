@@ -1,4 +1,7 @@
-# UML Generator
+# uml-generator-CSSE374
+CSSE374 Term Project - Winter 2018-2019
+
+My partner was Hussein Alawami
 
 ## How to use
 
@@ -25,8 +28,3 @@ Pass in any number of the options below to args:
 19. "-baddecorator" detects when the decorator abstract class doesn't override all methods and adds them in red
 
 The default options are to not recurse into superclasses and interfacess, private level analysis, text display, and using PlantUML
-
-## Work Contributions
-
-For milestone 1:
-We pretty much pair programmed the whole time since we had to set up the infrastructure of the codebase. For future work we will probably work more individually.
