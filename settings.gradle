@@ -15,4 +15,4 @@ include 'api'
 include 'services:webservice'
 */
 
-rootProject.name = 'uml-generator'
+rootProject.name = 'uml-generator-CSSE374'

@@ -45,11 +45,13 @@ public class DefaultPreRenderTask implements PreRenderTask {
 				for (CardinalityWrapper associationName : fromClass.classNodeWrapper.associations) {
 					if (associationName.toClass.equals(toClass.classNodeWrapper.name)) {
 						fromClass.associations.add(toClass);
+						toClass.classesThatAssociateWithThis.add(fromClass);
 					}
 				}
 				for (CardinalityWrapper dependencyName : fromClass.classNodeWrapper.dependencies) {
 					if (dependencyName.toClass.equals(toClass.classNodeWrapper.name)) {
 						fromClass.dependencies.add(toClass);
+						toClass.classesThatDependOnThis.add(fromClass);
 					}
 				}
 			}

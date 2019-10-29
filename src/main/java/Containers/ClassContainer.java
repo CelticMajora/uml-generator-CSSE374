@@ -18,6 +18,8 @@ public class ClassContainer {
 	public List<ClassContainer> interfaces;
 	public List<ClassContainer> dependencies;
 	public List<ClassContainer> associations;
+	public List<ClassContainer> classesThatDependOnThis;
+	public List<ClassContainer> classesThatAssociateWithThis;
 
 	public ClassNodeWrapper classNodeWrapper;
 
@@ -37,5 +39,7 @@ public class ClassContainer {
 		this.interfaces = new LinkedList<ClassContainer>();
 		this.dependencies = new LinkedList<ClassContainer>();
 		this.associations = new LinkedList<ClassContainer>();
+		this.classesThatDependOnThis = new LinkedList<ClassContainer>();
+		this.classesThatAssociateWithThis = new LinkedList<ClassContainer>();
 	}
 }

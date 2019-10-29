@@ -36,6 +36,7 @@ import Readers.Reader;
 import Readers.ReaderFactory;
 import Readers.RecursiveReaderFactory;
 import Readers.WhitelistBlacklistReaderFactory;
+import Renderers.CouplingStatsRenderer;
 import Renderers.PlantUMLRenderer;
 import Renderers.Renderer;
 import Utilities.DirectoryHandler;
@@ -185,6 +186,12 @@ public class API {
 		}
 
 		ProgramContainer programContainer = preRenderTask.getProgramContainer();
+		
+		for(String option : map.keySet()) {
+			if(this.rendererMap.containsKey(option)) {
+				renderer = this.rendererMap.get(option);
+			}
+		}
 
 		display.display(renderer.render(programContainer));
 	}
@@ -214,5 +221,7 @@ public class API {
 		this.preRenderMap.put("-public", KeepOnlyPublicPreRenderTask.class);
 		this.preRenderMap.put("-private", KeepPrivateAndUpPreRenderTask.class);
 		this.preRenderMap.put("-protected", KeepProtectedAndPublicPreRenderTask.class);
+		
+		this.rendererMap.put("-coupling", new CouplingStatsRenderer());
 	}
 }
